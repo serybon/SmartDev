@@ -9,6 +9,7 @@ public class SmartDevice {
     private String name;
     private String color;
     private ArrayList<String> supportedColors;
+    private int brightness;
 
     public SmartDevice(String name) {
         this.id = UUID.randomUUID().toString();
@@ -17,7 +18,11 @@ public class SmartDevice {
         this.supportedColors = new ArrayList<>(
                 List.of("white", "red", "green", "blue", "yellow")
         );
+        this.brightness = 0;
+    }
 
+    public void setBrightness(int brightness) {
+        this.brightness = Math.max(0, Math.min(100, brightness));
     }
 
     public void setColor(String color) {
@@ -37,4 +42,5 @@ public class SmartDevice {
     public void showSupportedColors() {
         supportedColors.forEach(System.out::println);
     }
+
 }
