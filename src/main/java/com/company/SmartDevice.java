@@ -9,5 +9,6 @@ public class SmartDevice {
     public SmartDevice(String name) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
+
     }
 }
