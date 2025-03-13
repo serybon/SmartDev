@@ -12,6 +12,7 @@ import java.util.UUID;
 public class SmartDevice {
     private String id;
     private String name;
+    private boolean isOn;
     private LocalDateTime lastInteraction;
     private ArrayList<String> activityLog;
     private String color;
@@ -21,6 +22,7 @@ public class SmartDevice {
     public SmartDevice(String name) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
+        this.isOn = false;
         this.lastInteraction = LocalDateTime.now();
         this.activityLog = new ArrayList<>();
         this.color = "white";
@@ -28,6 +30,14 @@ public class SmartDevice {
                 List.of("white", "red", "green", "blue", "yellow")
         );
         this.brightness = 0;
+    }
+
+    public void turnOn() {
+        isOn = true;
+    }
+
+    public void turnOff() {
+        isOn = false;
     }
   
     private void updateLastInteraction() {
@@ -66,4 +76,3 @@ public class SmartDevice {
     public void showSupportedColors() {
         supportedColors.forEach(System.out::println);
     }
-}
