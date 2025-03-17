@@ -40,10 +40,6 @@ public class SmartDevice {
         this.brightness = Math.max(0, Math.min(100, brightness));
     }
 
-    public void setBrightness(int brightness) {
-        this.brightness = Math.max(0, Math.min(100, brightness));
-    }
-
     public void setColor(String color) {
         if (supportedColors.contains(color.toLowerCase())) {
             this.color = color.toLowerCase();
